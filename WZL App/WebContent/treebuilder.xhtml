@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h:outputStylesheet library="css" name="styles.css" />
+	<h:outputStylesheet library="css" name="normalize.css" />
+	<h:outputStylesheet library="css" name="reset.css" />
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputScript library="js" name="updateForm.js"/>
+	
+
+
+	<title>Tree Builder</title>
+</h:head>
+<h:body onload="startTime()">
+
+
+
+
+	<p:breadCrumb>
+		<p:menuitem value="Step 1: " url="#" />
+		<p:menuitem value="Step 2: " url="#" />
+		<p:menuitem value="Step 3: " url="#" />
+		<p:menuitem value="Step 4: " url="#" />
+
+
+	</p:breadCrumb>
+		
+		<h:form id="editor">
+		<h:panelGrid border="1" columns="2">
+			<h:outputText value="Name:"/>
+			<h:inputText id="editorName" value="#{testController.stepName}" onkeyup="updateStepName(this)"/>
+			
+			<h:outputText value="Type:"/>
+			
+				<h:selectOneRadio id="radio" value="#{testController.inputType}" onchange="selectInput(this)">
+					<f:selectItem id="textInput" itemLabel="Text Input" itemValue="textInput" />
+        			<f:selectItem id="textAreaInput" itemLabel="Text Area Input" itemValue="textAreaInput" />
+        			<f:selectItem id="selectOneInput" itemLabel="Select One" itemValue="selectOneInput"/>
+        			<f:selectItem id="sliderInput" itemLabel="Slider" itemValue="sliderInput"/>
+				</h:selectOneRadio>
+			
+			
+		</h:panelGrid>
+	</h:form>
+		
+	
+		<section id="iphone5c" class="green">
+		<div class="wrap">
+			<div class="device">
+				<div class="inner"></div>
+				<div class="camera"></div>
+				<div class="sleep"></div>
+				<div class="sensor"></div>
+				<div class="volume"></div>
+				<div class="speaker"></div>
+				<div class="screen">
+	
+    					
+	
+					<h:form id="deviceForm">
+						<table id="deviceHeader">
+							<tr>
+								<td><input type="button" value="prev"/></td>
+								<td><div id="deviceTime"></div></td>
+								<td><input type="button" value="next"/></td>
+							</tr>
+						</table>
+						
+						
+						<br/><br/><br/><br/>
+						<b id="stepName" style="margin-left: 16px; margin-top: 40px;">Name of Step</b> <br/><br/>
+						
+						<input type="text" class="textInput"/>
+						
+						<textarea class="textAreaInput" rows="8" cols="40" style="margin: 16px"/>
+						
+						<select class="selectOneInput">
+  							<option value="volvo">Volvo</option>
+ 							<option value="saab" > Saab</option>
+ 							<option value="mercedes" >Mercedes</option>
+  							<option value="audi" >Audi</option>
+						</select>
+						
+						<div style="text-align: center" class="sliderInput">
+							<b id="sliderText"> </b> <br/>
+        					<input type="range" onmousemove="updateProgress(this)" min="0" max="100"/>
+    					</div>
+						  
+					</h:form> 
+				</div>
+				<div class="home"></div>
+			</div>
+
+		</div>
+		</section>
+		
+		
+
+
+
+
+</h:body>
+
+
+
+
+
+
+</html>
